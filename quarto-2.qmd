@@ -1,0 +1,26 @@
+---
+title: "Quarto 2"
+author: "Ivy Spratt"
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| message: false
+#| label: setup
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+#| label: make-plot
+#| warning: false
+penguins |> 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+    geom_point() +
+    labs(title = "Penguins Body Mass compared to Flipper Length", 
+         x = "Body Mass", 
+         y = "Flipper Length")
+```
+
